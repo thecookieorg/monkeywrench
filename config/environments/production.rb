@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Required for Devise, remember to change localhost 3000 to the production / real domain name
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'monkeywrench.herokuapp.com' }
 
   # Amazon S3 Storage Setup
   config.paperclip_defaults = {
