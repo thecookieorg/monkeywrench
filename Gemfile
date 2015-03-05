@@ -17,6 +17,7 @@ gem "paperclip", "~> 4.2"
 
 gem "figaro"
 gem 'devise'
+gem 'aws-sdk', '< 2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
