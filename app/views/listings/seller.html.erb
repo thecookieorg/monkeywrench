@@ -2,8 +2,6 @@
   <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
 <% end %>
 
-<h1>Listing Listings</h1>
-
 <table>
   <thead>
     <tr>
@@ -22,6 +20,11 @@
         <td><%= listing.description %></td>
         <td><%= number_to_currency(listing.price) %></td>
         <td><%= "Sold by #{listing.user.name}" %></td>
+        <% if (user_signed_in?) && (current_user == listing.user) %>
+          <td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
+          <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
+          <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
