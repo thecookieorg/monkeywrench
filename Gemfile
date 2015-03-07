@@ -1,3 +1,4 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
 
 
@@ -18,6 +19,7 @@ gem "paperclip", "~> 4.2"
 gem "figaro"
 gem 'devise'
 gem 'aws-sdk', '< 2.0'
+gem 'stripe'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
