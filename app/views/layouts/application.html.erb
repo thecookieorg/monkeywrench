@@ -12,7 +12,6 @@
 
 <%= render 'layouts/navigation' %>
 
-
 <div class="container">
 	<% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
@@ -22,11 +21,11 @@
       </div>
       <% end %>
     <% end %>
-
-	<%= yield %>
 </div>
 
-<div class="footer">
-</div>
+<%= yield %>
+
+<%= render 'layouts/footer' %>
+
 </body>
 </html>
