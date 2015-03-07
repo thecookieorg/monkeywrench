@@ -1,7 +1,17 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:search, :index, :show]
   before_filter :check_user, only: [:edit, :update, :destroy]
+  before_action :check_user, except: [:search, :index, :show]
+
+  def search
+    if params[:search].present?
+      @listings = Listing.search(params[:search])
+    else
+      @listings = Listing.all.order("created_at DESC")
+    end
+  end
 
   def seller
     @listings = Listing.where(user: current_user).order("created_at DESC")

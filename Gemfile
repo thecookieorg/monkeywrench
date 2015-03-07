@@ -20,6 +20,7 @@ gem "figaro"
 gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'stripe'
+gem 'searchkick'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
