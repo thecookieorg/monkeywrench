@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:search, :index, :show]
   before_filter :check_user, only: [:edit, :update, :destroy]
-  before_action :check_user, except: [:search, :index, :show]
+  before_action :check_user, except: [:search]
 
   def search
     if params[:search].present?
